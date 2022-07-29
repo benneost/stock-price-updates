@@ -12,7 +12,8 @@ from telegram.ext import (
 
 from ticker import get_price_change
 
-TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+TOKEN = os.environ("TELEGRAM_BOT_TOKEN")
+# TOKEN = "5498748553:AAFIU0FrlWMI8PQaUO_ew83omAezjmkIKCw"
 
 
 def get_px_change(
