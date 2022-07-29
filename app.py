@@ -56,7 +56,7 @@ def main() -> None:
         url_path=TOKEN,
         webhook_url="https://api.telegram.org/bot" + TOKEN + "/setWebhook?url=https://stockbot-telegram.herokuapp.com"
     )
-    updater.bot.setWebhook("https://api.telegram.org/bot" + TOKEN + "/setWebhook?url=https://stockbot-telegram.herokuapp.com")
+    # updater.bot.setWebhook("https://api.telegram.org/bot" + TOKEN + "/setWebhook?url=https://stockbot-telegram.herokuapp.com")
     
     updater.idle()
 
