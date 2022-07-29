@@ -57,7 +57,7 @@ def main() -> None:
         port=int(PORT),
         url_path=TOKEN
     )
-    updater.bot.setWebhook("https://<project_name>.herokuapp.com/" + TOKEN)
+    updater.bot.setWebhook("https://stockbot-telegram.herokuapp.com/" + TOKEN)
     
     updater.idle()
 
