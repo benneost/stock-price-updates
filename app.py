@@ -41,12 +41,24 @@ def main() -> None:
     # Add handlers here
     dispatcher.add_handler(CommandHandler("get_px_change", get_px_change))
 
-    # Start the Bot
-    updater.start_polling()
+    # # Start the Bot
+    # updater.start_polling()
 
-    # Block until the user presses Ctrl-C or the process receives SIGINT,
-    # SIGTERM or SIGABRT. This should be used most of the time, since
-    # start_polling() is non-blocking and will stop the bot gracefully.
+    # # Block until the user presses Ctrl-C or the process receives SIGINT,
+    # # SIGTERM or SIGABRT. This should be used most of the time, since
+    # # start_polling() is non-blocking and will stop the bot gracefully.
+    # updater.idle()
+
+    # Start the Bot
+    # `start_polling` for local dev; webhook for production
+    # updater.start_polling()
+    updater.start_webhook(
+        listen="0.0.0.0",
+        port=int(PORT),
+        url_path=TOKEN
+    )
+    updater.bot.setWebhook("https://<project_name>.herokuapp.com/" + TOKEN)
+    
     updater.idle()
 
 
