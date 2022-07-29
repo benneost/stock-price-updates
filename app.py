@@ -54,9 +54,11 @@ def main() -> None:
     updater.start_webhook(listen="0.0.0.0",
         port=int(os.environ.get('PORT', 5000)),
         url_path=TOKEN,
-        webhook_url="https://api.telegram.org/bot" + TOKEN + "/setWebhook?url=https://stockbot-telegram.herokuapp.com"
+        webhook_url='https://stockbot-telegram.herokuapp.com/' + TOKEN
+        # webhook_url="https://api.telegram.org/bot" + TOKEN + "/setWebhook?url=https://stockbot-telegram.herokuapp.com"
     )
     # updater.bot.setWebhook("https://api.telegram.org/bot" + TOKEN + "/setWebhook?url=https://stockbot-telegram.herokuapp.com")
+    # webhook_url='https://myapp.herokuapp.com/' + SECRET_KEY
     
     updater.idle()
 
