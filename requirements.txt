@@ -2,3 +2,4 @@ pandas==1.4.3
 numpy==1.23.1
 yfinance==0.1.74
 python-telegram-bot==13.13
+flask==2.1.3
