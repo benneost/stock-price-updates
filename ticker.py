@@ -1,9 +1,11 @@
-# Script to obtain price changes using yfinance
+import os
+import requests
+from flask import Flask
 
-import yfinance as yf
-import numpy as np
-from typing import Optional, Tuple, List
+app = Flask(__name__)
 
+
+@app.route('/')
 def get_price_change(
     ticker: str,
     lookback: Optional[str] = "2d"
@@ -25,4 +27,13 @@ def get_price_change(
     if not hist:
         return f"Couldn't find history for ticker {ticker}", None
     pct_chng = ((hist[-1] - hist[0]) / hist[0]) * 100
+    print(np.round(pct_chng, 2), hist)
     return np.round(pct_chng, 2), hist
+
+
+get_price_change("TSLA")
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
