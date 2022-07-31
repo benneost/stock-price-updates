@@ -9,7 +9,7 @@ from telegram.ext import (
     Filters
 )
 
-from old_ticker import get_price_change
+from ticker import get_price_change
 
 TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "Not Available")
 
